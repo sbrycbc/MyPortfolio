@@ -10,8 +10,8 @@ export const data=[
         id:1,
         name:"React JS Application",
         image:Beaches,
-        github:"",
-        live:"",
+        github:"https://github.com/sbrycbc/travel-website-using-tailwind-css/",
+        live:"https://travel-website-using-tailwind-css.vercel.app/",
     },
     {
         id:2,
