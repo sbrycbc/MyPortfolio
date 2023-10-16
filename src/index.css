@@ -31,3 +31,8 @@
         hsla(242, 74%, 61%, 0.8)   
     )!important;
 }
+
+.active {
+    color: #6fc2b0!important; 
+  }
+  

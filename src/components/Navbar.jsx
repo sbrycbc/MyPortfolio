@@ -3,43 +3,45 @@ import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Logo from "../assets/sbry.png";
-import { Link } from 'react-scroll';
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
+
   const handleClick = () => setNav(!nav);
 
   return (
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
       <div>
-        <img src={Logo} alt="Logo Image" style={{ width: "50px" }} />
+        <img src={Logo} alt="Logo" style={{ width: "50px" }} />
       </div>
 
       {/* ----------- menu ------------  */}
 
-      <ul className='hidden md:flex'>
-        <li>
-          <Link to='home' smooth={true} duration={500}>
+      <ul className="hidden md:flex">
+        <li className={`nav-link ${activeLink === "home" ? "active" : ""}`}>
+          <Link to="home" smooth={true} duration={500} onClick={() => setActiveLink("home")}>
             Home
           </Link>
         </li>
-        <li>
-          <Link to='about' smooth={true} duration={500}>
+        <li className={`nav-link ${activeLink === "about" ? "active" : ""}`}>
+        <Link to="about" smooth={true} duration={500} onClick={() => setActiveLink("about")}>
             About
           </Link>
         </li>
-        <li>
-          <Link to='skills' smooth={true} duration={500}>
+        <li className={`nav-link ${activeLink === "skills" ? "active" : ""}`}>
+          <Link to="skills" smooth={true} duration={500} onClick={() => setActiveLink("skills")}>
             Skills
           </Link>
         </li>
-        <li>
-          <Link to='work' smooth={true} duration={500}>
+        <li className={`nav-link ${activeLink === "work" ? "active" : ""}`}>
+          <Link to="work" smooth={true} duration={500} onClick={() => setActiveLink("work")}>
             Work
           </Link>
         </li>
-        <li>
-          <Link to='contact' smooth={true} duration={500}>
+        <li className={`nav-link ${activeLink === "contact" ? "active" : ""}`}>
+          <Link to="contact" smooth={true} duration={500} onClick={() => setActiveLink("contact")}>
             Contact
           </Link>
         </li>
@@ -56,36 +58,32 @@ const Navbar = () => {
       <ul
         className={
           !nav
-            ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
+            ? "hidden"
+            : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
         }
       >
-        <li className='py-6 text-4xl'>
-          <Link onClick={handleClick} to='home' smooth={true} duration={500}>
+       <li className={`py-6 text-4xl ${activeLink === "home" ? "active" : ""}`}>
+          <Link onClick={handleClick} to="home"  smooth={true} duration={500}>
             Home
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
-          {' '}
-          <Link onClick={handleClick} to='about' smooth={true} duration={500}>
+        <li className={`py-6 text-4xl ${activeLink === "about" ? "active" : ""}`}>
+          <Link onClick={handleClick} to="about" smooth={true} duration={500}>
             About
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
-          {' '}
-          <Link onClick={handleClick} to='skills' smooth={true} duration={500}>
+        <li className={`py-6 text-4xl ${activeLink === "skills" ? "active" : ""}`}>
+          <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
             Skills
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
-          {' '}
-          <Link onClick={handleClick} to='work' smooth={true} duration={500}>
+        <li className={`py-6 text-4xl ${activeLink === "work" ? "active" : ""}`}>
+          <Link onClick={handleClick} to="work" smooth={true} duration={500}>
             Work
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
-          {' '}
-          <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
+        <li className={`py-6 text-4xl ${activeLink === "contact" ? "active" : ""}`}>
+          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
             Contact
           </Link>
         </li>
