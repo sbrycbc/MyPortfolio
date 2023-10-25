@@ -1,8 +1,8 @@
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
+import Home from "../src/components/home/Home";
+import About from "../src/components/about/About";
 import Skills from "./components/Skills";
-import Work from "./components/Work";
+import Work from "../src/components/work/Work";
 import Contact from "./components/Contact";
 
 function App() {

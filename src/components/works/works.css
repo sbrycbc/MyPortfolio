@@ -6,12 +6,13 @@
     min-height: 47vh;
     min-width: 100vw;
     transform-style: preserve-3d;
+    margin-left: 180px;
   }
 
   .box {
     position: relative;
     width: 200px;
-    height: 200px;
+    height: 250px;
     transform-style: preserve-3d;
     transition: 1.5s;
     transform: perspective(1000px) rotateY(0deg);
@@ -38,7 +39,7 @@
 }
 .btns {
     position: absolute;
-    bottom: 30px;
+    bottom: 5px;
     display: flex;
     gap: 30px;
 }

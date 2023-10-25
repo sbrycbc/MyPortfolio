@@ -1,0 +1,11 @@
+.hi-container {
+    padding-top:100px;
+  
+    }
+    
+.home-container {
+      background: url(../../assets/projects/pexels-eberhard-grossgasteiger-1421903.jpg);
+      background-size: cover;
+      font-family: 'Playpen Sans', cursive;
+  
+}
