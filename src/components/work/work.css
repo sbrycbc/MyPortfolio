@@ -1,22 +1,20 @@
 .content-div {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center left;
-    height: 250px;
-    width: 310px;
-    border-radius: 30px;
-
+    background-position: center top;
+    height: 300px;
+    width: 290px;
+    border-radius: 40px;
+    transition: background-image 0.3s;
+    background-color: #6fc2b0;
 }
 
 .content-div:hover {
     background-image: linear-gradient(
         to right,
-        rgba(112, 157, 255, 0.8),
-        hsla(242, 74%, 61%, 0.8)   
+        rgba(112, 255, 224, 0.9),
+        hsla(313, 69%, 60%, 0.842)   
     )!important;
     
 }
 
-.active {
-    color: #6fc2b0!important;
-  }

@@ -31,7 +31,7 @@ export const data=[
     },
     {
         id:4,
-        name:"Pokemon Fight Game in the Terminal",
+        name:"Pokemon Game in the Terminal",
         image:Pokemon,
         github:"https://github.com/sbrycbc/pokemon-game",
       
