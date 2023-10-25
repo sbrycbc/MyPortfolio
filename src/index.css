@@ -12,7 +12,7 @@
 
 @layer base {
     body {
-        @apply font-[Raleway];
+        @apply font-[Libre+Baskerville];
     }
     li {
         @apply px-4;

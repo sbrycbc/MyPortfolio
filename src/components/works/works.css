@@ -11,8 +11,8 @@
 
   .box {
     position: relative;
-    width: 200px;
-    height: 250px;
+    width: 180px;
+    height: 220px;
     transform-style: preserve-3d;
     transition: 1.5s;
     transform: perspective(1000px) rotateY(0deg);
@@ -55,7 +55,7 @@
     cursor: pointer;
 }
 .btns .btn:active {
-    background: #fff;
+    background: #6fc2b0;
 }
 .btns .btn::before {
     content: '';
