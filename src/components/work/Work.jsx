@@ -1,10 +1,10 @@
 import React from "react";
-import { data } from "../../data/data";
+import { work} from "../../data/work.js";
 import "./work.css";
 
 const Work = () => {
   // projects file
-  const projects = data;
+  const projects = work;
 
   return (
     <div name="work" className="w-full md:h-screen text-gray-300 bg-[#0a192f]">
