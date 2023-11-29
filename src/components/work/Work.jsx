@@ -1,15 +1,24 @@
-import React from "react";
-import { work} from "../../data/work.js";
+import React, { useState } from "react";
+import { work } from "../../data/work.js";
 import "./work.css";
 
 const Work = () => {
-  // projects file
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   const projects = work;
 
   return (
     <div name="work" className="w-full md:h-screen text-gray-300 bg-[#0a192f]">
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-        <div className="pb-4">
+        <div className="pb-3">
           <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-pink-300">
             Work
           </p>
@@ -17,42 +26,41 @@ const Work = () => {
         </div>
 
         {/* Container for projects */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-1 md:grid-cols-7 gap-6">
           {projects.map((item, index) => (
             <div
               key={index}
               style={{ backgroundImage: `url(${item.image})` }}
-              className="shadow-lg shadow-[#040c16] group rounded-md 
-              flex justify-center text-center items-center mx-auto content-div "
+              className="relative shadow-lg shadow-[#7699c9] group rounded-md content-div"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
             >
               {/* Hover effect for images */}
-              <div className="opacity-0 group-hover:opacity-90">
-                <span className="text-xl font-bold text-black tracking-wider">
-                  {item.name}
-                </span>
-                <div className="pt-8 text-center">
-                  {/* Render the "Code" button regardless of live availability */}
-                  <a href={item.github} target="_blank">
-                    <button
-                      className="text-center rounded-lg px-4 py-3 m-2
-                       bg-white text-gray-700 font-bold text-lg"
-                    >
-                      Code
-                    </button>
-                  </a>
-                  {/* Render the "Live" button if the 'live' URL exists */}
-                  {item.live && (
-                    <a href={item.live} target="_blank">
-                      <button
-                        className="text-center rounded-lg px-4 py-3 m-2
-                         bg-white text-gray-700 font-bold text-lg"
-                      >
-                        Live
-                      </button>
-                    </a>
-                  )}
+              {hoveredIndex === index && (
+                <div className="absolute inset-0 flex flex-col justify-center items-center">
+                  <span className="mx-5 text-xl font-bold text-white tracking-wider">
+                    {item.name}
+                  </span>
+                  <div className="pt-9">
+                    <div className="flex flex-col-reverse">
+                      {/* Render the "Code" button regardless of live availability */}
+                      <a href={item.github} target="_blank">
+                        <button className="work-button text-center  rounded-lg px-2 py-1 m-1 bg-white text-gray-700 font-bold text-lg">
+                          Code
+                        </button>
+                      </a>
+                      {/* Render the "Live" button if the 'live' URL exists */}
+                      {item.live && (
+                        <a href={item.live} target="_blank">
+                          <button className="work-button text-center rounded-lg px-2 py-1 m-1 bg-white text-gray-700 font-bold text-lg">
+                            Live
+                          </button>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
