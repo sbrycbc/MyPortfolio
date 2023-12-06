@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { work } from "../../data/work.js";
+import { FaCode } from "react-icons/fa6";
+import { GiEyeTarget } from "react-icons/gi";
 import "./work.css";
 
 const Work = () => {
@@ -31,13 +33,13 @@ const Work = () => {
             <div
               key={index}
               style={{ backgroundImage: `url(${item.image})` }}
-              className="relative shadow-lg shadow-[#7699c9] group rounded-md content-div"
+              className="relative shadow-lg shadow-[#7699c9] group rounded-md content-div "
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
               {/* Hover effect for images */}
               {hoveredIndex === index && (
-                <div className="absolute inset-0 flex flex-col justify-center items-center">
+                <div className="absolute inset-1 flex flex-col justify-center items-center">
                   <span className="mx-5 text-xl font-bold text-white tracking-wider">
                     {item.name}
                   </span>
@@ -45,15 +47,15 @@ const Work = () => {
                     <div className="flex flex-col-reverse">
                       {/* Render the "Code" button regardless of live availability */}
                       <a href={item.github} target="_blank">
-                        <button className="work-button text-center  rounded-lg px-2 py-1 m-1 bg-white text-gray-700 font-bold text-lg">
-                          Code
+                        <button className="work-button text-center  rounded-full px-5 py-1 m-1 bg-white ">
+                        <FaCode size={22} />
                         </button>
                       </a>
                       {/* Render the "Live" button if the 'live' URL exists */}
                       {item.live && (
                         <a href={item.live} target="_blank">
-                          <button className="work-button text-center rounded-lg px-2 py-1 m-1 bg-white text-gray-700 font-bold text-lg">
-                            Live
+                          <button className="work-button text-center rounded-full px-5 py-1 m-1 bg-white">
+                          <GiEyeTarget size={22}/>
                           </button>
                         </a>
                       )}
