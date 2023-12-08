@@ -46,16 +46,16 @@ const Work = () => {
                   <div className="pt-9">
                     <div className="flex flex-col-reverse">
                       {/* Render the "Code" button regardless of live availability */}
-                      <a href={item.github} target="_blank">
+                      <a href={item.github} target="_blank" rel="noreferrer">
                         <button className="work-button text-center  rounded-full px-5 py-1 m-1 bg-white ">
-                        <FaCode size={22} />
+                          <FaCode size={22} />
                         </button>
                       </a>
                       {/* Render the "Live" button if the 'live' URL exists */}
                       {item.live && (
-                        <a href={item.live} target="_blank">
+                        <a href={item.live} target="_blank" rel="noreferrer">
                           <button className="work-button text-center rounded-full px-5 py-1 m-1 bg-white">
-                          <GiEyeTarget size={22}/>
+                            <GiEyeTarget size={22}/>
                           </button>
                         </a>
                       )}

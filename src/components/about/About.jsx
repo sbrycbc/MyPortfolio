@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilFoto from "../../assets/projects/sbry.jpg";
+import ProfilePhoto from "../../assets/projects/sbry.jpg";
 
 const About = () => {
   return (
@@ -31,9 +31,9 @@ const About = () => {
             width={350}
             height={350}
             className=" shadow-xl shadow-[#698cbe] rounded-full ml-14 sm:block md:w-[400px] md:h-[350px] lg:w-[375px] lg:h-[500px]"
-            alt="about image"
+            alt="Sabriye Cebeci"
             style={{ objectFit: "contain" }}
-            src={ProfilFoto} />
+            src={ProfilePhoto} />
         </div>
       </div>
     </div>
